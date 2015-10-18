@@ -12,8 +12,7 @@ nvm ls
 npm install -g aglio --python=/usr/bin/python
 
 ## generate API
-aglio -i docs/API.md -o templates/api.tpl
+aglio -i docs/api.md -o index.html
 
 ## Notes:
-# API.md contains current production API
-# API-experimental.md contains both current and future features
+# api.md contains current production API

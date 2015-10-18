@@ -1,19 +1,18 @@
 FORMAT: 1A
-HOST: https://simbadx.herokuapp.com
+HOST: https://linc.semantic.md
 
 # LINC API
 
-LINC is a simple API allowing Lion Guardians to identify lions in Africa.
+LINC is a simple API allowing Lion Guardians to identify lions using computer vision.
 
 # LINC API Root [/]
 
 ## Group Authentication
 
-Resources related to authentication in the API.
+The CV Server implements basic authentication. 
 
-## Group User
-
-Resources related to users in the API.
+Username: simba@semantic.md
+Password: Admin123
 
 ## Group Lion
 
@@ -87,70 +86,16 @@ Resources related to lions in the API.
                                             }
                                         }
 
-## Find Lions [/lions{?gender}{?name}{?organization_id}{?dob_start}{?dob_end}]
+## Find Lions [/lions{?gender}{?name}{?organization_id}{?dob_start}{?dob_end}{?no_images}]
+
+Get a list of matching lions with metadata information and associated image sets
 
 + Parameters
     + gender: "m" (optional, string) - gender of the lion in form of a string
     + organization_id: "20150507" (optional, alphanumeric) - ID of the organization in form of an alphanumeric string
     + dob_start: "YYYY-MM-DD" (optional, string) - start date for lion's birthdate range in YYYY-MM-DD format
     + dob_end: "YYYY-MM-DD" (optional, string) - end date for lion's birthdate range in YYYY-MM-DD format
-
-### Find a Lion [GET]
-
-+ Response 200 (application/json)
-
-        {
-        }
-
-
-## Group Model
-
-Resources related to models in the API.
-
-## Model [/model/{model_id}]
-
-+ Parameters
-    + model_id: "20150507" (optional, alphanumeric) - ID of the model in form of an alphanumeric string
-
-### View a Model Detail [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "model_id": "20150507-092034-8ceb",
-            "model_name": "masusu",
-            "status": "finished"
-        }
-
-### Learn a Model [POST]
-
-Create a new classifier.
-
-+ Request (application/json)
-
-        {
-            "lion_name": "api-test-model",
-            "lions": []
-        }
-
-
-+ Response 201 (application/json)
-
-        {
-            "model_id": "20150507-092034-8ceb",
-            "model_name": "api-test-model",
-            "status": "processing"
-        }
-
-### Delete a Model [DELETE]
-
-+ Response 200 (application/json)
-
-        {
-            "model_id": "20150507-092034-8ceb",
-            "model_name": "ovarian-ultrasound",
-            "status": "deleted"
-        }
+    +no_images: “true” (optional, string) - used to return all lions and information but without their image uri’s to reduce bandwidth.
 
 ## Recognition [/identifications]
 
@@ -210,4 +155,3 @@ Get status of identification task. The valid values of "status" are TBD but will
 ## Group Terms of Use
 
 By using our API you are agreeing to our terms of use. You can read it here.
-
