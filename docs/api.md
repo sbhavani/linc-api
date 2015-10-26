@@ -152,6 +152,49 @@ Get status of identification task. The valid values of "status" are TBD but will
         }
 
 
+## Training [/train/]
+
+Train a classifier for each lion and return the lion ids and associated classifier ids.
+
+### Train Classifier [POST]
+
+Note that if "force_train" is included in the form, then all classifiers are retrained. If "tag_list" is included then
+only the classifiers for the specific lion ids are retrained.
+
++ Request (application/json)
+
+        {
+            "force_train": 'y',
+            "tag_list": ['1','2','20']
+        }
+
++ Response 200 (application/json)
+
+        {
+             "project_id": "562d70f614bdf74d153a5cf5",
+             "status": "processing"
+        }
+
+### Training Status
+
+Get status of training task. The valid values of "status" are TBD but will likely be "queued", "processing", "finished", and "error".
+Note that if a classifier was not trained or there was an error training a classifier, then an empty string will be returned for the
+ classifier id.
+
+### Status [GET]
+
++ Response 200 (application/json)
+
+        {
+            "project_id": "562d70f614bdf74d153a5cf5",
+            status: "finished",
+            tag2model: {
+                '1': '20150818-225816-066b',
+                '2': '20130818-215216-066b',
+                '3': ''
+            }
+        }
+
 ## Group Terms of Use
 
 By using our API you are agreeing to our terms of use. You can read it here.
