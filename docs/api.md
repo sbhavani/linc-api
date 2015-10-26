@@ -172,13 +172,11 @@ only the classifiers for the specific lion ids are retrained.
              "status": "processing"
         }
 
-### Training Status
+### Training Status [GET]
 
 Get status of training task. The valid values of "status" are TBD but will likely be "queued", "processing", "finished", and "error".
 Note that if a classifier was not trained or there was an error training a classifier, then an empty string will be returned for the
  classifier id.
-
-### Status [GET]
 
 + Response 200 (application/json)
 
