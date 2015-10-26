@@ -11,9 +11,6 @@ LINC is a simple API allowing Lion Guardians to identify lions using computer vi
 
 The CV Server implements basic authentication. 
 
-Username: simba@semantic.md
-Password: Admin123
-
 ## Group Lion
 
 Resources related to lions in the API.
