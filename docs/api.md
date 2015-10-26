@@ -157,15 +157,12 @@ Train a classifier for each lion and return the lion ids and associated classifi
 
 ### Train Classifier [POST]
 
-Note that if "force_train" is included in the form, then all classifiers are retrained. If "tag_list" is included then
-only the classifiers for the specific lion ids are retrained.
+Note that if "tag_list" is included then only the classifiers for the specific lion ids are trained.
 
-+ Request (application/json)
++ Request (multipart/form-data)
 
-        {
-            "force_train": 'y',
-            "tag_list": ['1','2','20']
-        }
+        + tag_list: ['1','2','20'] (optional, string array) - list of all tags to compare against in form of string array
+        + force_train: 'y' (optional, string) - all classifiers are retrained
 
 + Response 200 (application/json)
 
