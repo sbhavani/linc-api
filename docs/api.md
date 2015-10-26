@@ -94,6 +94,8 @@ Get a list of matching lions with metadata information and associated image sets
     + dob_end: "YYYY-MM-DD" (optional, string) - end date for lion's birthdate range in YYYY-MM-DD format
     +no_images: “true” (optional, string) - used to return all lions and information but without their image uri’s to reduce bandwidth.
 
+## Group Classifier
+
 ## Recognition [/identifications]
 
 Classify a set of image and return the predicted labels and associated confidence.
