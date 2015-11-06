@@ -96,11 +96,11 @@ Get a list of matching lions with metadata information and associated image sets
 
 ## Group Classifier
 
-## Recognition [/identifications]
+## Identification [/identifications]
 
 Classify a set of image and return the predicted labels and associated confidence.
 
-### Recognition [POST]
+### Identification [POST]
 
 + Request (application/json)
 
@@ -127,14 +127,14 @@ Classify a set of image and return the predicted labels and associated confidenc
            }
         }
 
-## Status [/results/<job_id>]
+## Identification Status [/results/<job_id>]
 
 Get status of identification task. The valid values of "status" are TBD but will likely be "queued", "processing", "finished", and "error".
 
 + Parameters
     + job_id: "e3464fc5-54d5-48db-bc05-761cad999cd8" (required, alphanumeric) - ID of the recognition job in form of an alphanumeric string
 
-### Status [GET]
+### Identification Status [GET]
 
 + Response 200 (application/json)
 
@@ -155,7 +155,7 @@ Get status of identification task. The valid values of "status" are TBD but will
 
 Train a classifier for each lion and return the lion ids and associated classifier ids.
 
-### Train Classifier [POST]
+### Train Model [POST]
 
 Note that if "tag_list" is included then only the classifiers for the specific lion ids are trained.
 
@@ -187,6 +187,22 @@ Note that if a classifier was not trained or there was an error training a class
                 '2': '20130818-215216-066b',
                 '3': ''
             }
+        }
+
+## Group Evaluation
+
+## Accuracy [/accuracy/<lion_id>]
+
+Return the accuracy for classifying images associated with lion_id.
+
+### Accuracy [GET]
+
++ Response 200 (application/json)
+
+        {
+            "tag_id": "2",
+            "model_id": "20151025-171816-e4b1",
+            "accuracy": 50.0
         }
 
 ## Group Terms of Use
