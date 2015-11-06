@@ -11,8 +11,8 @@ nvm ls
 ## install aglio
 npm install -g aglio --python=/usr/bin/python
 
-## generate API
-aglio -i docs/api.md -o index.html
+## generate CV Server API
+aglio -i docs/cv-api.md -o index.html
 
 ## Notes:
 # api.md contains current production API

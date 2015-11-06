@@ -202,7 +202,7 @@ Return the accuracy for classifying images associated with lion_id.
         {
             "tag_id": "2",
             "model_id": "20151025-171816-e4b1",
-            "accuracy": 50.0
+            "accuracy": 95.0
         }
 
 ## Group Terms of Use
